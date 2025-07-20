@@ -1,16 +1,22 @@
 {
   "name": "@shablon-eu/domain-ownership",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "generate keys and every dns entries",
   "scripts": {
-    "prepublishOnly": "npm run ci",
+    "format": "prettier --write .",
+    "check-format": "prettier --check .",
+    "test": "vitest run",
+    "ci": "pnpm run build && pnpm run check-format && pnpm run test",
+    "prepublishOnly": "pnpm run ci",
     "local-release": "changeset version && changeset publish",
     "build": "tsc"
   },
   "devDependencies": {
     "@changesets/cli": "^2.29.5",
     "@types/node": "^24.0.15",
-    "typescript": "^5.8.3"
+    "prettier": "^3.6.2",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
   },
   "keywords": [],
   "author": "Michael Schramm <michael@ms07.at>",
