@@ -1,6 +1,6 @@
 {
   "name": "@shablon-eu/domain-ownership",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "generate keys and every dns entries",
   "scripts": {
     "format": "prettier --write .",
