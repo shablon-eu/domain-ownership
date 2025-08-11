@@ -1,6 +1,6 @@
 {
   "name": "@shablon-eu/domain-ownership",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "generate keys and every dns entries",
   "repository": "https://github.com/shablon-eu/domain-ownership",
   "scripts": {

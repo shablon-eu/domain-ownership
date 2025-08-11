@@ -1,5 +1,11 @@
 # @shablon-eu/domain-ownership
 
+## 1.0.2
+
+### Patch Changes
+
+- 7167f17: prevent exceptions in http verification
+
 ## 1.0.1
 
 ### Patch Changes
