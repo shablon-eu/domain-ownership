@@ -16,8 +16,8 @@ export async function verifyDns(
     if (txt.flat().includes(value)) {
       return true;
     }
-  } catch (e) {
-    console.error("unexpected error verifying dns", e);
+  } catch (error) {
+    console.error("unexpected error verifying dns", error);
   }
 
   return false;

@@ -7,17 +7,23 @@ export async function verifyWellKnown(
 ) {
   const { value, wellKnown } = generate(domain, config);
 
-  const response = await fetch(wellKnown, {
-    method: "GET",
-    redirect: "error",
-    signal: AbortSignal.timeout(500),
-  });
+  try {
+    const response = await fetch(wellKnown, {
+      method: "GET",
+      redirect: "error",
+      signal: AbortSignal.timeout(500),
+    });
 
-  if (!response.ok) {
-    return false;
+    if (!response.ok) {
+      return false;
+    }
+
+    const text = await response.text();
+
+    return text.trim() === value;
+  } catch (error) {
+    console.error("unexpected error verifying well known", error);
   }
 
-  const text = await response.text();
-
-  return text.trim() === value;
+  return false;
 }
