@@ -1,9 +1,10 @@
 import fetch from "node-fetch";
 import { generate } from "./generate.js";
+import type { Logger } from "./logger.js";
 
 export async function verifyWellKnown(
   domain: string,
-  config?: { seed?: string; name?: string },
+  config?: { seed?: string; name?: string; logger?: Logger },
 ) {
   const { value, wellKnown } = generate(domain, config);
 
@@ -22,7 +23,7 @@ export async function verifyWellKnown(
 
     return text.trim() === value;
   } catch (error) {
-    console.error("unexpected error verifying well known", error);
+    config?.logger?.error("unexpected error verifying well known", error);
   }
 
   return false;

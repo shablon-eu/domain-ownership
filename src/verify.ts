@@ -1,3 +1,4 @@
+import type { Logger } from "./logger.js";
 import { verifyDns } from "./verify.dns.js";
 import { verifyWellKnown } from "./verify.well.known.js";
 
@@ -6,6 +7,7 @@ export async function verify(
   config?: {
     seed?: string;
     name?: string;
+    logger?: Logger;
   },
 ) {
   const results = await Promise.all([
