@@ -1,6 +1,6 @@
-import { resolveTxt } from "node:dns/promises"
-import { generate } from "./generate.js"
-import type { Logger } from "./logger.js"
+import { resolveTxt } from "node:dns/promises";
+import { generate } from "./generate.js";
+import type { Logger } from "./logger.js";
 
 export async function verifyDns(
   domain: string,

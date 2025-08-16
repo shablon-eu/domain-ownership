@@ -41,7 +41,10 @@ describe("verifyWellKnown", () => {
   });
 
   test("returns false when body mismatch", async () => {
-    fetchMock.mockResolvedValue({ ok: true, text: vi.fn().mockResolvedValue("nope") });
+    fetchMock.mockResolvedValue({
+      ok: true,
+      text: vi.fn().mockResolvedValue("nope"),
+    });
 
     const result = await verifyWellKnown(domain, config);
     expect(result).toBe(false);

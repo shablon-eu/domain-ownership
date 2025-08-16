@@ -25,11 +25,11 @@ export function generate(
   }
 
   if (!config?.seed) {
-    config?.logger?.warn('default seed is being used - INSECURE')
+    config?.logger?.warn("default seed is being used - INSECURE");
   }
 
   if (!config?.name) {
-    config?.logger?.warn('default name is being used')
+    config?.logger?.warn("default name is being used");
   }
 
   const value = createHash("sha256")
