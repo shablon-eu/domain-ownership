@@ -1,5 +1,11 @@
 # @shablon-eu/domain-ownership
 
+## 1.1.0
+
+### Minor Changes
+
+- 2af6e38: validation for nested subdomains
+
 ## 1.0.2
 
 ### Patch Changes
